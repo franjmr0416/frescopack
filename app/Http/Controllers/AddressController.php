@@ -35,7 +35,8 @@ class AddressController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $address = new Address($request->input());
+        $address->save();
     }
 
     /**

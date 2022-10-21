@@ -35,7 +35,8 @@ class BillingsdataController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $billingsdata = new Billingsdata($request->input());
+        $billingsdata->save();
     }
 
     /**

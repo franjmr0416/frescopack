@@ -35,7 +35,8 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User($request->input());
+        $user->save();
     }
 
     /**
