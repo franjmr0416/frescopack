@@ -28,6 +28,9 @@ class MayoristasController extends Controller
 
     public function store(Request $request)
     {
+
+        return $request->post();
+        /*
         DB::beginTransaction();
         try {
             $user = new User($request->input());
@@ -38,11 +41,12 @@ class MayoristasController extends Controller
 
             $billingdata = new Billingsdata();
             $billingdata->save();
-*/
+
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();
             return $e->getMessage();
         }
+     */
     }
 }
