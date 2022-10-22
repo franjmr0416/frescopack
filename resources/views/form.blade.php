@@ -22,21 +22,21 @@
                 <div class="row text-start">
                     <div class="mb-3 col-md-6">
                         <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre">
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="empresa" class="form-label">Empresa</label>
-                        <input type="text" class="form-control" id="empresa" name="empresa">
+                        <input type="text" class="form-control" id="empresa" name="empresa" required>
                     </div>
                 </div>
                 <div class="row text-start">
                     <div class="mb-3 col-md-6">
                         <label for="email" class="form-label">Correo electronico</label>
-                        <input type="email" class="form-control" id="email" name="email">
+                        <input type="email" class="form-control" id="email" name="email" required>
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="telefono" class="form-label">Número de teléfono</label>
-                        <input type="tel" class="form-control" id="telefono" name="telefono">
+                        <input type="tel" class="form-control" id="telefono" name="telefono" required>
                     </div>
                 </div>
                 <div class="row text-start">
@@ -118,7 +118,6 @@
                         <label class="form-check-label" for="flexCheckDefault">
                           Usar dirección de envío
                         </label>
-                        <input type="hidden" name="igualAdress" value="0">
                     </div>
                 </div>
                 <div class="row text-start">
