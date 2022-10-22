@@ -18,7 +18,9 @@ class MayoristasController extends Controller
 {
     public function index()
     {
-        return view('table');
+        $data = DB::table('users')->get();
+
+        return view('table', compact('data'));
     }
 
     public function create()
@@ -27,7 +29,7 @@ class MayoristasController extends Controller
         $estados = DB::table('estados')->get();
         $ciudades = DB::table('ciudades')->get();
         $colonias = DB::table('colonias')->get();
-        //$colonias = Colonia::pluck('CCodigoPostal', 'CNombreAsentamiento');
+
         return view('form', compact('estados', 'ciudades', 'colonias'));
     }
 
@@ -54,38 +56,42 @@ class MayoristasController extends Controller
             $user->save();
             $lastId = $user->IdUser;
 
-            $address = new Address([
-                'FK_IdUser' => $lastId,
-                'ContactName' => $request->nombreContacto,
-                'Address' => $request->direccion,
-                'PostalCode' => $request->cp,
-                'Neighborhood' => $request->colonia,
-                'City' => $request->ciudad,
-                'State' => $request->estado,
-                'Email' => $request->correoEnvio,
-                'Phone' => $request->telefonoEnvio,
-                'Type' => 'Default',
-                'Status' => 1
-            ]);
-            $address->save();
+            if ($request->nombreContacto != '') {
+                $address = new Address([
+                    'FK_IdUser' => $lastId,
+                    'ContactName' => $request->nombreContacto,
+                    'Address' => $request->direccion,
+                    'PostalCode' => $request->cp,
+                    'Neighborhood' => $request->colonia,
+                    'City' => $request->ciudad,
+                    'State' => $request->estado,
+                    'Email' => $request->correoEnvio,
+                    'Phone' => $request->telefonoEnvio,
+                    'Type' => 'Default',
+                    'Status' => 1
+                ]);
+                $address->save();
 
-            $billingdata = new Billingsdata([
-                'FK_IdUser' => $lastId,
-                'IqualAddress' => $request->igualAdress,
-                'ContactName' => $request->nombreContactoF,
-                'Address' => $request->direccionF,
-                'PostalCode' => $request->cpF,
-                'Neighborhood' => $request->coloniaF,
-                'City' => $request->ciudadF,
-                'State' => $request->estadoF,
-                'Email' => $request->correoEnvioF,
-                'Phone' => $request->telefonoEnvioF,
-                'Type' => 'Default',
-                'Status' => 1
-            ]);
-            $billingdata->save();
+                $billingdata = new Billingsdata([
+                    'FK_IdUser' => $lastId,
+                    'IqualAddress' => $request->igualAdress,
+                    'ContactName' => $request->nombreContactoF,
+                    'Address' => $request->direccionF,
+                    'PostalCode' => $request->cpF,
+                    'Neighborhood' => $request->coloniaF,
+                    'City' => $request->ciudadF,
+                    'State' => $request->estadoF,
+                    'Email' => $request->correoEnvioF,
+                    'Phone' => $request->telefonoEnvioF,
+                    'Type' => 'Default',
+                    'Status' => 1
+                ]);
+                $billingdata->save();
+            }
+
 
             DB::commit();
+            return view('table');
         } catch (\Exception $e) {
             DB::rollBack();
             return $e->getMessage();

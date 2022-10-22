@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('table');
 });
 
 Route::resource('mayoristas', App\Http\Controllers\MayoristasController::class);
