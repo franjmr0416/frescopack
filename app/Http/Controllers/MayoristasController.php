@@ -47,13 +47,39 @@ class MayoristasController extends Controller
                 'Status' => 1
             ]);
             $user->save();
-            /*
-            $address = new Address();
+            $lastId = $user->IdUser;
+
+            $address = new Address([
+                'FK_IdUser' => $lastId,
+                'ContactName' => $request->nombreContacto,
+                'Address' => $request->direccion,
+                'PostalCode' => $request->cp,
+                'Neighborhood' => $request->colonia,
+                'City' => $request->ciudad,
+                'State' => $request->estado,
+                'Email' => $request->correoEnvio,
+                'Phone' => $request->telefonoEnvio,
+                'Type' => 'Default',
+                'Status' => 1
+            ]);
             $address->save();
 
-            $billingdata = new Billingsdata();
+            $billingdata = new Billingsdata([
+                'FK_IdUser' => $lastId,
+                'IqualAddress' => $request->igualAdress,
+                'ContactName' => $request->nombreContactoF,
+                'Address' => $request->direccionF,
+                'PostalCode' => $request->cpF,
+                'Neighborhood' => $request->coloniaF,
+                'City' => $request->ciudadF,
+                'State' => $request->estadoF,
+                'Email' => $request->correoEnvioF,
+                'Phone' => $request->telefonoEnvioF,
+                'Type' => 'Default',
+                'Status' => 1
+            ]);
             $billingdata->save();
-*/
+
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();

@@ -106,6 +106,7 @@
                         <label class="form-check-label" for="flexCheckDefault">
                           Usar dirección de envío
                         </label>
+                        <input type="hidden" name="igualAdress" value="0">
                     </div>
                 </div>
                 <div class="row text-start">
