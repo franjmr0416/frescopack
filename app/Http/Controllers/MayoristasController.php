@@ -18,7 +18,34 @@ class MayoristasController extends Controller
 {
     public function index()
     {
-        $data = DB::table('users')->get();
+        //$data = DB::table('users')->get();
+
+        $data = DB::table('addresses')
+            ->join('users', 'addresses.IdAddress', '=', 'users.IdUser')
+            ->join('billingsdatas', 'users.IdUser', '=', 'billingsdatas.IdBillingdata')
+            ->selectRaw('users.IdUser, users.Name, users.Company, users.Email, users.Phone, users.Discount, count(addresses.IdAddress) as cotizaciones, count(billingsdatas.IdBillingdata) as ordenes,addresses.Status, count(addresses.Status) as solicitudes')
+            ->groupBy('users.IdUser')
+            ->get();
+        $solicitudes = DB::table('addresses')
+            ->join('users', 'addresses.IdAddress', '=', 'users.IdUser')
+            ->join('billingsdatas', 'users.IdUser', '=', 'billingsdatas.IdBillingdata')
+            ->selectRaw('users.IdUser,addresses.Status, count(addresses.Status) as solicitudes')
+            ->groupBy('users.IdUser')
+            ->get();
+
+
+
+        $arrStatus = [];
+        foreach ($solicitudes as $item) {
+            array_push($arrStatus, $item->Status);
+        }
+
+        $i = 0;
+        foreach ($data as $item) {
+
+            $item->NoSolicitudes = $arrStatus[$i];
+            $i++;
+        }
 
         return view('table', compact('data'));
     }

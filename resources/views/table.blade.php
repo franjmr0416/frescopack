@@ -42,9 +42,9 @@
                             <td>{{$item->Email}}</td>
                             <td>{{$item->Phone}}</td>
                             <td>{{$item->Discount}}%</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{$item->cotizaciones}}</td>
+                            <td>{{$item->ordenes}}</td>
+                            <td>{{$item->NoSolicitudes}}</td>
                             <td>
                                 <button class="btn btn-outline-dark">
                                     <i class="bi bi-pencil"></i>

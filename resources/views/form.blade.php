@@ -70,9 +70,14 @@
                     <div class="mb-3 col-md-6">
                         <label for="colonia" class="form-label">Colonia</label>
                         <select class="form-select" id="colonia" name="colonia">
-                            @foreach ($colonias as $colonia)
-                                <option value="{{$colonia->CColonia}}">{{$colonia->CNombreAsentamiento}}</option>
-                            @endforeach
+                            <option value="0" selected disabled>Selecciona la colonia</option>
+                            
+                            @isset ($colonias)
+                                @foreach ($colonias as $colonia)
+                                    <option value="{{$colonia->CColonia}}">{{$colonia->CNombreAsentamiento}}</option>
+                                @endforeach 
+                            @endisset                           
+                            
                         </select>
                     </div>
                 </div>
@@ -80,17 +85,23 @@
                     <div class="mb-3 col-md-6">
                         <label for="ciudad" class="form-label">Ciudad</label>
                         <select class="form-select" id="ciudad" name="ciudad">
-                            @foreach ($ciudades as $ciudad)
-                                <option value="{{$ciudad->CMunicipio}}">{{$ciudad->Descripcion}}</option>
-                            @endforeach
+                            <option value="0" selected disabled>Selecciona la ciudad</option>
+                            @isset ($ciudades)
+                                @foreach ($ciudades as $ciudad)
+                                    <option value="{{$ciudad->CMunicipio}}">{{$ciudad->Descripcion}}</option>
+                                @endforeach
+                            @endisset
                         </select>
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="estado" class="form-label">Estado</label>
                         <select class="form-select" id="estado" name="estado">
-                            @foreach ($estados as $estado)
-                                <option value="{{$estado->CEstado}}">{{$estado->NombreEstado}}</option>
-                            @endforeach
+                            <option value="0" selected disabled>Selecciona el estado</option>
+                            @isset ($estados)
+                                @foreach ($estados as $estado)
+                                    <option value="{{$estado->CEstado}}">{{$estado->NombreEstado}}</option>
+                                @endforeach
+                            @endisset                            
                         </select>
                     </div>
                 </div>
@@ -138,9 +149,12 @@
                     <div class="mb-3 col-md-6">
                         <label for="coloniaF" class="form-label">Colonia</label>
                         <select class="form-select" id="coloniaF" name="coloniaF">
-                            @foreach ($colonias as $colonia)
-                                <option value="{{$colonia->CColonia}}">{{$colonia->CNombreAsentamiento}}</option>
-                            @endforeach
+                            <option value="0" selected disabled>Selecciona la colonia</option>
+                            @isset ($colonias)
+                                @foreach ($colonias as $colonia)
+                                    <option value="{{$colonia->CColonia}}" >{{$colonia->CNombreAsentamiento}}</option>
+                                @endforeach
+                            @endisset                            
                         </select>
                     </div>
                 </div>
@@ -148,17 +162,24 @@
                     <div class="mb-3 col-md-6">
                         <label for="ciudadF" class="form-label">Ciudad</label>
                         <select class="form-select" id="ciudadF" name="ciudadF">
-                            @foreach ($ciudades as $ciudad)
-                                <option value="{{$ciudad->CMunicipio}}">{{$ciudad->Descripcion}}</option>
-                            @endforeach
-                        </select>
+                            <option value="0" selected disabled>Selecciona la ciudad</option>
+                            @isset ($ciudades)
+                                @foreach ($ciudades as $ciudad)
+                                    <option value="{{$ciudad->CMunicipio}}">{{$ciudad->Descripcion}}</option>
+                                @endforeach
+                            @endisset
+                        </select>                            
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="estadoF" class="form-label">Estado</label>
                         <select class="form-select" id="estadoF" name="estadoF">
-                            @foreach ($estados as $estado)
-                            <option value="{{$estado->CEstado}}">{{$estado->NombreEstado}}</option>
-                        @endforeach
+                            <option value="0" selected disabled>Selecciona el estado</option>
+                            @isset ($estados)
+                                @foreach ($estados as $estado)
+                                    <option value="{{$estado->CEstado}}">{{$estado->NombreEstado}}</option>
+                                @endforeach
+                            @endisset
+                           
                         </select>
                     </div>
                 </div>
@@ -199,20 +220,36 @@
             </div>
         </div>
     </form>
-    <script>
-    let isChecked = false;
+    
+    <script type="text/javascript">
+        
+        var isChecked = false;     
+    
     $("#flexCheckDefault").click(function(){
         isChecked = isChecked ? false : true;
         if(isChecked){
-            $("#nombreContactoF").val($("#nombreContacto").val()).prop('disabled', true);
-            $("#direccionF").val($("#direccion").val()).prop('disabled', true);
-            $("#cpF").val($("#cp").val()).prop('disabled', true);
-            $("#coloniaF").val($("#colonia").val()).prop('disabled', true);
-            $("#ciudadF").val($("#ciudad").val()).prop('disabled', true);
-            $("#estadoF").val($("#estado").val()).prop('disabled', true);
-            $("#correoEnvioF").val($("#correoEnvio").val()).prop('disabled', true);
-            $("#telefonoEnvioF").val($("#telefonoEnvio").val()).prop('disabled', true);
+            let nombre = $("#nombreContacto").val();
+            let direccion = $("#direccion").val();
+            let cp = $("#cp").val();
+            let colonia = $("#colonia").val();
+            let ciudad = $("#ciudad").val();
+            let estado = $("#estado").val();
+            let correo = $("#correoEnvio").val();
+            let tel = $("#telefonoEnvio").val();
 
+            $("#nombreContactoF").val(nombre).prop('disabled', true);
+            $("#direccionF").val(direccion).prop('disabled', true);
+            $("#cpF").val(cp).prop('disabled', true);
+            $("#coloniaF").val(colonia).prop('disabled', true);
+            $("#ciudadF").val(ciudad).prop('disabled', true);
+            $("#estadoF").val(estado).prop('disabled', true);
+            $("#correoEnvioF").val(correo).prop('disabled', true);
+            $("#telefonoEnvioF").val(tel).prop('disabled', true);
+
+            let nombreF = $("#nombreContactoF").val();
+
+            console.log(nombre);
+            console.log(nombreF);
         }else{
             $("#nombreContactoF").val('').prop('disabled', false);
             $("#direccionF").val('').prop('disabled', false);
@@ -225,5 +262,21 @@
 
         }
     });
+    
+    /*
+        $("#cp").change(function(){
+            var cp = $('#cp').val();
+            var token = '{{csrf_token()}}';
+            var url = '/codigos/show/';
+            $.ajax({
+                url: '{{}}/',
+                type: "GET",
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        });
+        */
     </script>
 </body>

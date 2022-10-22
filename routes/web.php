@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [MayoristasController::class, 'index']);
 
 Route::resource('mayoristas', App\Http\Controllers\MayoristasController::class);
+Route::resource('codigos', App\Http\Controllers\CodigosController::class);
