@@ -200,5 +200,31 @@
             </div>
         </div>
     </form>
-    
+    <script>
+    let isChecked = false;
+    $("#flexCheckDefault").click(function(){
+        isChecked = isChecked ? false : true;
+        if(isChecked){
+            $("#nombreContactoF").val($("#nombreContacto").val()).prop('disabled', true);
+            $("#direccionF").val($("#direccion").val()).prop('disabled', true);
+            $("#cpF").val($("#cp").val()).prop('disabled', true);
+            $("#coloniaF").val($("#colonia").val()).prop('disabled', true);
+            $("#ciudadF").val($("#ciudad").val()).prop('disabled', true);
+            $("#estadoF").val($("#estado").val()).prop('disabled', true);
+            $("#correoEnvioF").val($("#correoEnvio").val()).prop('disabled', true);
+            $("#telefonoEnvioF").val($("#telefonoEnvio").val()).prop('disabled', true);
+
+        }else{
+            $("#nombreContactoF").val('').prop('disabled', false);
+            $("#direccionF").val('').prop('disabled', false);
+            $("#cpF").val('').prop('disabled', false);
+            $("#coloniaF").val('').prop('disabled', false);
+            $("#ciudadF").val('').prop('disabled', false);
+            $("#estadoF").val('').prop('disabled', false);
+            $("#correoEnvioF").val('').prop('disabled', false);
+            $("#telefonoEnvioF").val('').prop('disabled', false);
+
+        }
+    });
+    </script>
 </body>
