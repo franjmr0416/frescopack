@@ -28,12 +28,24 @@ class MayoristasController extends Controller
 
     public function store(Request $request)
     {
-
-        return $request->post();
-        /*
         DB::beginTransaction();
         try {
-            $user = new User($request->input());
+            $user = new User([
+                'Name' => $request->nombre,
+                'LastName' => '',
+                'Company' => $request->empresa,
+                'Email' => $request->email,
+                'Password' => '',
+                'Phone' => $request->telefono,
+                'Discount' => $request->descuento,
+                'BusinessName' => $request->razon,
+                'Cfdi' => $request->cfdi,
+                'Rfc' => $request->rfc,
+                'Type' => 'Moral',
+                'Location' => 'Tienda',
+                'Role' => 'Mayorista',
+                'Status' => 1
+            ]);
             $user->save();
             /*
             $address = new Address();
@@ -41,12 +53,11 @@ class MayoristasController extends Controller
 
             $billingdata = new Billingsdata();
             $billingdata->save();
-
+*/
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();
             return $e->getMessage();
         }
-     */
     }
 }
