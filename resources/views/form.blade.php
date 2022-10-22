@@ -69,17 +69,29 @@
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="colonia" class="form-label">Colonia</label>
-                        <select class="form-select" id="colonia" name="colonia"></select>
+                        <select class="form-select" id="colonia" name="colonia">
+                            @foreach ($colonias as $colonia)
+                                <option value="{{$colonia->CColonia}}">{{$colonia->CNombreAsentamiento}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="row text-start">
                     <div class="mb-3 col-md-6">
                         <label for="ciudad" class="form-label">Ciudad</label>
-                        <select class="form-select" id="ciudad" name="ciudad"></select>
+                        <select class="form-select" id="ciudad" name="ciudad">
+                            @foreach ($ciudades as $ciudad)
+                                <option value="{{$ciudad->CMunicipio}}">{{$ciudad->Descripcion}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="estado" class="form-label">Estado</label>
-                        <select class="form-select" id="estado" name="estado"></select>
+                        <select class="form-select" id="estado" name="estado">
+                            @foreach ($estados as $estado)
+                                <option value="{{$estado->CEstado}}">{{$estado->NombreEstado}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
 
@@ -126,17 +138,29 @@
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="coloniaF" class="form-label">Colonia</label>
-                        <select class="form-select" id="coloniaF" name="coloniaF"></select>
+                        <select class="form-select" id="coloniaF" name="coloniaF">
+                            @foreach ($colonias as $colonia)
+                                <option value="{{$colonia->CColonia}}">{{$colonia->CNombreAsentamiento}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="row text-start">
                     <div class="mb-3 col-md-6">
                         <label for="ciudadF" class="form-label">Ciudad</label>
-                        <select class="form-select" id="ciudadF" name="ciudadF"></select>
+                        <select class="form-select" id="ciudadF" name="ciudadF">
+                            @foreach ($ciudades as $ciudad)
+                                <option value="{{$ciudad->CMunicipio}}">{{$ciudad->Descripcion}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="estadoF" class="form-label">Estado</label>
-                        <select class="form-select" id="estadoF" name="estadoF"></select>
+                        <select class="form-select" id="estadoF" name="estadoF">
+                            @foreach ($estados as $estado)
+                            <option value="{{$estado->CEstado}}">{{$estado->NombreEstado}}</option>
+                        @endforeach
+                        </select>
                     </div>
                 </div>
 

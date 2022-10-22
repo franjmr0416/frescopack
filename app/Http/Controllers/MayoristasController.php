@@ -23,7 +23,12 @@ class MayoristasController extends Controller
 
     public function create()
     {
-        return view('form');
+
+        $estados = DB::table('estados')->get();
+        $ciudades = DB::table('ciudades')->get();
+        $colonias = DB::table('colonias')->get();
+        //$colonias = Colonia::pluck('CCodigoPostal', 'CNombreAsentamiento');
+        return view('form', compact('estados', 'ciudades', 'colonias'));
     }
 
     public function store(Request $request)
