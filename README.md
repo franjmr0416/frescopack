@@ -7,6 +7,8 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+### Falta por implementar: Input de Código Postal modifica a: Ciudad, Colonia y Estado.
+
 ## Vistas
 
 ### Formulario de captura
