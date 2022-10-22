@@ -7,58 +7,42 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Vistas
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Formulario de captura
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+![127 0 0 1_8000_mayoristas_create](https://user-images.githubusercontent.com/51140256/197358992-fe31eaeb-be29-4aa2-9bcd-f59527a5282b.png)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Tabla dinámica
 
-## Learning Laravel
+![Captura desde 2022-10-22 13-59-06](https://user-images.githubusercontent.com/51140256/197359013-dd51832d-2e71-4f1c-91c6-53d145904d77.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Verificación campos básicos requeridos
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+![Captura desde 2022-10-22 14-09-50](https://user-images.githubusercontent.com/51140256/197359022-a3a699f3-4699-4a7a-a209-92e76439f1ef.png)
 
-## Laravel Sponsors
+### Copiado de datos de dirección al marcar checkbox
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+![Captura desde 2022-10-22 14-14-18](https://user-images.githubusercontent.com/51140256/197359030-4f99b7f8-34de-46af-bf35-8c99ba64d213.png)
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Controlador (funciones principales: get, insert)
 
-## Contributing
+### Función insert registros
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+![code](https://user-images.githubusercontent.com/51140256/197359186-aefaeacd-07db-4018-a216-815202dc6b79.png)
 
-## Code of Conduct
+### Función get para tabla
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+![codeT](https://user-images.githubusercontent.com/51140256/197359190-05ea9d44-4eab-4cee-9df1-4208aef9c673.png)
 
-## Security Vulnerabilities
+## Catálogos cargados en BD (MariaDB)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+![Captura desde 2022-10-22 14-35-23](https://user-images.githubusercontent.com/51140256/197359326-389b9b7d-f6eb-4f73-88ee-37a9420ee7c5.png)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+![Captura desde 2022-10-22 14-36-27](https://user-images.githubusercontent.com/51140256/197359330-84b2bd03-66d1-494e-a3a4-75147cac8bbf.png)
+
+![Captura desde 2022-10-22 14-36-41](https://user-images.githubusercontent.com/51140256/197359332-10b6ad52-90d9-42c3-b470-868205bc913a.png)
+
+![Captura desde 2022-10-22 14-37-02](https://user-images.githubusercontent.com/51140256/197359339-658d8f4e-700f-4bac-8019-a11e432c5dc8.png)
