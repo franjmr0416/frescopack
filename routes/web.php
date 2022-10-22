@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('table');
-});
+Route::get('/', [MayoristasController::class, 'index']);
 
 Route::resource('mayoristas', App\Http\Controllers\MayoristasController::class);
