@@ -18,7 +18,6 @@ class MayoristasController extends Controller
 {
     public function index()
     {
-        //$data = DB::table('users')->get();
 
         $data = DB::table('addresses')
             ->join('users', 'addresses.IdAddress', '=', 'users.IdUser')
